@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* MyRepublic Purple Theme */
+    --background: 270 50% 98%;
+    --foreground: 270 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 60% 15%;
+
+    /* MyRepublic Purple */
+    --primary: 276 56% 37%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Lighter Purple */
+    --secondary: 276 40% 95%;
+    --secondary-foreground: 276 56% 37%;
+
+    --muted: 270 30% 96%;
+    --muted-foreground: 270 20% 45%;
+
+    /* Accent - Orange CTA */
+    --accent: 25 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 30% 90%;
+    --input: 270 30% 90%;
+    --ring: 276 56% 37%;
+
+    --radius: 0.75rem;
+
+    /* Custom MyRepublic Colors */
+    --myrepublic-purple: 276 56% 37%;
+    --myrepublic-purple-dark: 276 60% 25%;
+    --myrepublic-purple-light: 276 50% 60%;
+    --myrepublic-orange: 25 100% 50%;
+    --myrepublic-orange-hover: 25 100% 45%;
+    --myrepublic-gradient-start: 276 56% 37%;
+    --myrepublic-gradient-end: 280 70% 20%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(276 56% 37%) 0%, hsl(280 70% 20%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(270 50% 98%) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(276 56% 37%) 0%, hsl(276 50% 60%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(25 100% 50%) 0%, hsl(35 100% 55%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(276 56% 37% / 0.08);
+    --shadow-md: 0 4px 16px hsl(276 56% 37% / 0.12);
+    --shadow-lg: 0 8px 32px hsl(276 56% 37% / 0.16);
+    --shadow-glow: 0 0 40px hsl(276 56% 37% / 0.3);
+    --shadow-orange-glow: 0 0 30px hsl(25 100% 50% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 280 70% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 280 60% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 280 60% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 276 56% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 276 40% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 276 30% 18%;
+    --muted-foreground: 270 20% 65%;
+
+    --accent: 25 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 276 30% 20%;
+    --input: 276 30% 20%;
+    --ring: 276 56% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-lg;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(276 56% 37%) 0%, hsl(280 70% 15%) 100%);
+  }
+
+  .gradient-purple {
+    background: linear-gradient(135deg, hsl(276 56% 37%) 0%, hsl(276 50% 60%) 100%);
+  }
+
+  .gradient-orange {
+    background: linear-gradient(135deg, hsl(25 100% 50%) 0%, hsl(35 100% 55%) 100%);
+  }
+
+  .text-gradient-purple {
+    @apply bg-clip-text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, hsl(276 56% 37%) 0%, hsl(276 50% 60%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .text-gradient-orange {
+    @apply bg-clip-text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, hsl(25 100% 50%) 0%, hsl(35 100% 55%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-2;
+    box-shadow: 0 12px 40px hsl(276 56% 37% / 0.2);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(25 100% 50% / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(25 100% 50% / 0.7);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(270 50% 98%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(276 56% 37% / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(276 56% 37% / 0.5);
+}
